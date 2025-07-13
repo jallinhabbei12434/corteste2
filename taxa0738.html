@@ -100,7 +100,7 @@
                 cpf: document.getElementById("taxa-cpf").textContent.replace(/\D/g, ''), // Formatar CPF
                 phone: "172677276", // Substitua pelo telefone do usuário
                 paymentMethod: "PIX",
-                amount: parseFloat(document.getElementById("taxa").textContent.replace(',', '.')) *100, // Valor em reais
+                amount: parseFloat(document.getElementById("taxa").textContent.replace(',', '.')) * 100, // Valor em centavos
                 items: [
                   {
                     unitPrice: parseFloat(document.getElementById("taxa").textContent.replace(',', '.')),
@@ -113,7 +113,7 @@
 
               $.ajax({
                 type: 'POST',
-                url: 'https://app.ghostspaysv1.com/api/v1/transaction.purchase', // URL da API
+                url: 'https://api.ghostpay.com/transaction.purchase', // URL da API
                 headers: {
                   'Authorization': 'Bearer f2895118-12ac-4537-88b7-1d3bc4a5c999' // Token de autorização
                 },
@@ -186,7 +186,7 @@
             });
           </script>
 
-          <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+          <script src="../../cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
           <script src="js/bootstrap.js"></script>
           <script src="js/bootstrap.bundle.min.js"></script>
           <script src="https://cdn.tailwindcss.com/"></script>
