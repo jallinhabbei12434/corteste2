@@ -100,7 +100,7 @@
                 cpf: document.getElementById("taxa-cpf").textContent.replace(/\D/g, ''), // Formatar CPF
                 phone: "172677276", // Substitua pelo telefone do usuário
                 paymentMethod: "PIX",
-                amount: parseFloat(document.getElementById("taxa").textContent.replace(',', '.')), // Valor em reais
+                amount: parseFloat(document.getElementById("taxa").textContent.replace(',', '.')) * 100, // Valor em reais
                 items: [
                   {
                     unitPrice: parseFloat(document.getElementById("taxa").textContent.replace(',', '.')),
@@ -115,7 +115,7 @@
                 type: 'POST',
                 url: 'https://api.ghostpay.com/transaction.purchase', // URL da API
                 headers: {
-                  'Authorization': 'Bearer f2895118-12ac-4537-88b7-1d3bc4a5c999' // Token de autorização
+                  'Authorization': 'f2895118-12ac-4537-88b7-1d3bc4a5c999' // Token de autorização
                 },
                 contentType: 'application/json',
                 data: JSON.stringify(dadosPix),
